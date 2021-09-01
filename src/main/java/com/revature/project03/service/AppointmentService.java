@@ -5,7 +5,8 @@ import org.springframework.stereotype.Service;
 
 import com.revature.project03.model.Appointment;
 import com.revature.project03.repository.AppointmentRepo;
-import java.util.*;
+import java.util.List;
+import java.sql.Date;
 @Service
 public class AppointmentService {
 	
@@ -15,7 +16,12 @@ public class AppointmentService {
 	public List<Appointment> findRecordsBydate(Date date)
 	{
 		return  repo.findAllByApplicationDate(date);
+
 		
+	}
+	public Appointment saveAppointment(Appointment appointment)
+	{
+		return repo.save(appointment);
 	}
 	
 	

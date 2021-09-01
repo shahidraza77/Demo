@@ -5,7 +5,7 @@ package com.revature.project03.model;
 import static javax.persistence.GenerationType.IDENTITY;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -19,6 +19,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -38,7 +40,7 @@ public class Appointment {
 	
 	@ManyToOne
 	@JoinColumn(name="p_Id")
-	//@Column(name="patient")
+    @Column(name="patient")
 	private Patient patient;
 	
 //	@OneToMany(cascade= CascadeType.ALL,mappedBy="doctor")
@@ -49,6 +51,7 @@ public class Appointment {
 	private Doctor doctor;
 	
 	//@Column(name="applicationDate")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date applicationDate;
 	
 	//@Column(name="purpose")

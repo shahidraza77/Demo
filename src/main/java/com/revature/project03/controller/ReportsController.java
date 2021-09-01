@@ -55,15 +55,25 @@ public class ReportsController {
 //		 System.out.println(count);
 //		return count;
 	//}
-		@PostMapping("/recordsbydate")
+//		@PostMapping("/recordsbydate")
+//		public List<Appointment> recordReport(@RequestBody DateMain date)
+//		{
+//			
+//			return appointmentService.findRecordsBydate(date.getDate());
+//		}
+		
+		@GetMapping("/recordsbydate")
 		public List<Appointment> recordReport(@RequestBody DateMain date)
 		{
 			
 			return appointmentService.findRecordsBydate(date.getDate());
 		}
-		
-		
-
+       
+		@PostMapping("/addappointment")
+		public Appointment addAppointment(@RequestBody Appointment appointment)
+		{
+			return appointmentService.saveAppointment(appointment);
+		}
 	
 
 }
