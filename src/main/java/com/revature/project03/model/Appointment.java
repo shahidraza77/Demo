@@ -40,7 +40,7 @@ public class Appointment {
 	
 	@ManyToOne
 	@JoinColumn(name="p_Id")
-    @Column(name="patient")
+    //@Column(name="patient")
 	private Patient patient;
 	
 //	@OneToMany(cascade= CascadeType.ALL,mappedBy="doctor")
